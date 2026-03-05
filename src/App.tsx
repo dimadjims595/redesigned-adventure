@@ -7,19 +7,9 @@ import {
   useLocation 
 } from 'react-router-dom';
 import { 
-  Building2, 
-  Users, 
-  FileText, 
-  Newspaper, 
-  Home, 
-  Search, 
-  Map as MapIcon, 
-  Shield, 
-  ExternalLink,
-  Menu,
-  X,
-  ChevronRight,
-  Info
+  Building2, Users, FileText, Newspaper, Home, 
+  Search, Map as MapIcon, Shield, ExternalLink,
+  Menu, X, ChevronRight, Info
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { clsx, type ClassValue } from 'clsx';
@@ -42,10 +32,6 @@ const CITIZENS = [
   { id: "C-1004", name: "Elena Rodriguez", status: "Inactive", occupation: "Doctor", joined: "2025-11-20" },
   { id: "C-1005", name: "David Chen", status: "Active", occupation: "Business Owner", joined: "2026-02-01" },
   { id: "C-1006", name: "Lisa Thompson", status: "Active", occupation: "Police Officer", joined: "2026-02-10" },
-  { id: "C-1007", name: "James Wilson", status: "Active", occupation: "Fisherman", joined: "2026-02-15" },
-  { id: "C-1008", name: "Emma Davis", status: "Active", occupation: "Journalist", joined: "2026-02-20" },
-  { id: "C-1009", name: "Robert Taylor", status: "Active", occupation: "Construction Worker", joined: "2026-02-25" },
-  { id: "C-1010", name: "Olivia Brown", status: "Active", occupation: "Real Estate Agent", joined: "2026-03-01" },
 ];
 
 const BUSINESSES = [
@@ -54,9 +40,6 @@ const BUSINESSES = [
   { id: 3, name: "Ammunation", owner: "State Gov", type: "Retail", x: 70, y: 30 },
   { id: 4, name: "Vanilla Unicorn", owner: "Unknown", type: "Entertainment", x: 55, y: 80 },
   { id: 5, name: "Maze Bank", owner: "State Gov", type: "Finance", x: 50, y: 50 },
-  { id: 6, name: "Yellow Jack Inn", owner: "James Wilson", type: "Bar", x: 20, y: 25 },
-  { id: 7, name: "Tequi-la-la", owner: "Olivia Brown", type: "Nightclub", x: 40, y: 45 },
-  { id: 8, name: "Up-n-Atom Burger", owner: "David Chen", type: "Fast Food", x: 65, y: 70 },
 ];
 
 const Navbar = () => {
@@ -78,7 +61,7 @@ const Navbar = () => {
             <span className="font-bold text-lg tracking-tight uppercase">State Portal</span>
           </div>
           <div className="hidden md:block">
-            <div className="flex items-baseline space-x-4">
+            <div className="flex space-x-4">
               {navLinks.map((link) => (
                 <Link key={link.name} to={link.path} className={cn("px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2", location.pathname === link.path ? "bg-white/10 text-[#f1c40f]" : "hover:bg-white/5 text-white/80 hover:text-white")}>
                   <link.icon className="w-4 h-4" />{link.name}
